@@ -79,6 +79,8 @@ import {
   gradeTaskModalProvider,
   uploadSubmissionModalProvider,
   ConfirmationModalProvider,
+  userNotificationSettingsModalProvider,
+  campusServiceProvider,
 } from './ajs-upgraded-providers';
 import {ProjectTasksListComponent} from './tasks/project-tasks-list/project-tasks-list.component';
 import {
@@ -284,6 +286,7 @@ const MY_DATE_FORMAT = {
     monthYearA11yLabel: 'MMMM yyyy',
   },
 };
+import { UnitStudentEnrolmentModalComponent } from './units/modals/unit-student-enrolment-modal/unit-student-enrolment-modal.component';
 
 @NgModule({
   // Components we declare
@@ -443,7 +446,6 @@ const MY_DATE_FORMAT = {
     ChartBaseComponent,
     ProgressBurndownChartComponent,
     TaskVisualisationComponent
-
   ],
   providers: [
     // Services we provide
@@ -538,6 +540,7 @@ const MY_DATE_FORMAT = {
     TaskPlannerPrerequisitesModalService,
     OverseerStepService,
     OverseerStepResultService,
+    UnitStudentEnrolmentModalComponent,
   ],
   imports: [
     FlexLayoutModule,

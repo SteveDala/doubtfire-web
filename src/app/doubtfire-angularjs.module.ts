@@ -85,6 +85,9 @@ import 'build/src/app/groups/groups.js';
 import 'build/src/app/groups/group-member-contribution-assigner/group-member-contribution-assigner.js';
 import 'build/src/app/groups/group-member-list/group-member-list.js';
 import 'build/src/app/units/modals/unit-student-enrolment-modal/unit-student-enrolment-modal.js';
+import 'build/src/app/groups/group-set-selector/group-set-selector.js';
+import 'build/src/app/groups/tutor-group-manager/tutor-group-manager.js';
+import 'build/src/app/groups/student-group-manager/student-group-manager.js';
 import 'build/src/app/units/modals/unit-ilo-edit-modal/unit-ilo-edit-modal.js';
 import 'build/src/app/units/modals/modals.js';
 import 'build/src/app/units/units.js';
@@ -231,12 +234,14 @@ import {TaskSubmissionHistoryComponent} from './tasks/task-submission-history/ta
 import {HeaderComponent} from './common/header/header.component';
 import {GlobalStateService} from './projects/states/index/global-state.service';
 import {UnauthorisedComponent} from './errors/states/unauthorised/unauthorised.component';
-import { TeachingPeriodUnitImportService } from './admin/states/teaching-periods/teaching-period-unit-import/teaching-period-unit-import.dialog';
-import { FileDownloaderService } from './common/file-downloader/file-downloader.service';
-import { GradeTaskModalService } from './tasks/modals/grade-task-modal/grade-task-modal.service';
-import { EditProfileDialogService } from './common/modals/edit-profile-dialog/edit-profile-dialog.service';
-import { ProgressBurndownChartComponent } from './visualisations/progress-burndown-chart/progressburndownchart.component';
-import { TaskVisualisationComponent } from './visualisations/task-visualisation/taskvisualisation.component';
+import {TeachingPeriodUnitImportService} from './admin/states/teaching-periods/teaching-period-unit-import/teaching-period-unit-import.dialog';
+import {FileDownloaderService} from './common/file-downloader/file-downloader.service';
+import {GradeTaskModalService} from './tasks/modals/grade-task-modal/grade-task-modal.service';
+import {EditProfileDialogService} from './common/modals/edit-profile-dialog/edit-profile-dialog.service';
+import {ProgressBurndownChartComponent} from './visualisations/progress-burndown-chart/progressburndownchart.component';
+import {TaskVisualisationComponent} from './visualisations/task-visualisation/taskvisualisation.component';
+import { TaskPlagiarismCardComponent } from './projects/states/dashboard/directives/task-dashboard/directives/task-plagiarism-card/task-plagiarism-card.component';
+import { TaskAssessorComponent } from './tasks/task-definition-editor/task-assessor/task-assessor.component';
 
 export const DoubtfireAngularJSModule = angular
   .module('doubtfire', [
@@ -340,6 +345,8 @@ DoubtfireAngularJSModule.factory(
   downgradeInjectable(SidekiqProgressModalService),
 );
 DoubtfireAngularJSModule.factory('GradeTaskModal', downgradeInjectable(GradeTaskModalService));
+DoubtfireAngularJSModule.factory('GlobalStateService', downgradeInjectable(GlobalStateService));
+DoubtfireAngularJSModule.factory('UnitStudentEnrolmentModal', downgradeInjectable(UnitStudentEnrolmentModalService));
 
 // directive -> component
 DoubtfireAngularJSModule.directive(
@@ -350,6 +357,7 @@ DoubtfireAngularJSModule.directive(
   'gradeIcon',
   downgradeComponent({component: GradeIconComponent}),
 );
+DoubtfireAngularJSModule.directive('appHeader', downgradeComponent({ component: HeaderComponent }));
 DoubtfireAngularJSModule.directive(
   'taskCommentComposer',
   downgradeComponent({component: TaskCommentComposerComponent}),
@@ -485,6 +493,8 @@ DoubtfireAngularJSModule.directive(
   downgradeComponent({component: TaskSubmissionHistoryComponent}),
 );
 DoubtfireAngularJSModule.directive('fUnits', downgradeComponent({component: FUnitsComponent}));
+DoubtfireAngularJSModule.directive('taskAssessor', downgradeComponent({ component: TaskAssessorComponent }));
+
 
 // Global configuration
 DoubtfireAngularJSModule.directive(
