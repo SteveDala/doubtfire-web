@@ -5,9 +5,8 @@ import {NgModule, Injector, DoBootstrap} from '@angular/core';
 import {BrowserModule, DomSanitizer, Title} from '@angular/platform-browser';
 import {UpgradeModule} from '@angular/upgrade/static';
 import {AppInjector, setAppInjector} from './app-injector';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 // Lottie animation module
@@ -81,6 +80,7 @@ import {
   ConfirmationModalProvider,
   userNotificationSettingsModalProvider,
   campusServiceProvider,
+  projectProvider,
 } from './ajs-upgraded-providers';
 import {ProjectTasksListComponent} from './tasks/project-tasks-list/project-tasks-list.component';
 import {
