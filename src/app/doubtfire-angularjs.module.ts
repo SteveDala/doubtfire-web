@@ -49,6 +49,7 @@ import 'build/src/app/tasks/task-ilo-alignment/modals/task-ilo-alignment-modal/t
 import 'build/src/app/tasks/task-ilo-alignment/task-ilo-alignment-editor/task-ilo-alignment-editor.js';
 import 'build/src/app/tasks/task-ilo-alignment/task-ilo-alignment-viewer/task-ilo-alignment-viewer.js';
 import 'build/src/app/config/privacy-policy/privacy-policy.js';
+import 'build/src/app/tasks/task-definition-editor/task-definition-editor.js';
 import 'build/src/app/config/runtime/runtime.js';
 import 'build/src/app/config/config.js';
 import 'build/src/app/config/root-controller/root-controller.js';
@@ -183,8 +184,8 @@ import {FeedbackTemplateService} from './api/services/feedback-template.service'
 import {StaffNotesComponent} from './projects/states/staff-notes/staff-notes.component';
 import {SidekiqProgressModalService} from './common/modals/sidekiq-progress-modal/sidekiq-progress-modal.service';
 import {TaskPrerequisitesCardComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-prerequisites-card/task-prerequisites-card.component';
-// import { UnitStudentEnrolmentModalService } from './units/modals/unit-student-enrolment-modal/unit-student-enrolment-modal.service';
-// import { PrivacyPolicy } from './config/privacy-policy/privacy-policy';
+// import {UnitStudentEnrolmentModalService} from './units/modals/unit-student-enrolment-modal/unit-student-enrolment-modal.service';
+// import {PrivacyPolicy} from './config/privacy-policy/privacy-policy';
 import {UnitStaffEditorComponent} from './units/states/edit/directives/unit-staff-editor/unit-staff-editor.component';
 import {GroupSetSelectorComponent} from './groups/group-set-selector/group-set-selector.component';
 import {UnitDetailsEditorComponent} from './units/states/edit/directives/unit-details-editor/unit-details-editor.component';
@@ -240,8 +241,8 @@ import {GradeTaskModalService} from './tasks/modals/grade-task-modal/grade-task-
 import {EditProfileDialogService} from './common/modals/edit-profile-dialog/edit-profile-dialog.service';
 import {ProgressBurndownChartComponent} from './visualisations/progress-burndown-chart/progressburndownchart.component';
 import {TaskVisualisationComponent} from './visualisations/task-visualisation/taskvisualisation.component';
-import { TaskPlagiarismCardComponent } from './projects/states/dashboard/directives/task-dashboard/directives/task-plagiarism-card/task-plagiarism-card.component';
-import { TaskAssessorComponent } from './tasks/task-definition-editor/task-assessor/task-assessor.component';
+import {TaskPlagiarismCardComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-plagiarism-card/task-plagiarism-card.component';
+import {TaskAssessorComponent} from './tasks/task-definition-editor/task-assessor/task-assessor.component';
 
 export const DoubtfireAngularJSModule = angular
   .module('doubtfire', [
@@ -347,6 +348,9 @@ DoubtfireAngularJSModule.factory(
 DoubtfireAngularJSModule.factory('GradeTaskModal', downgradeInjectable(GradeTaskModalService));
 DoubtfireAngularJSModule.factory('GlobalStateService', downgradeInjectable(GlobalStateService));
 DoubtfireAngularJSModule.factory('UnitStudentEnrolmentModal', downgradeInjectable(UnitStudentEnrolmentModalService));
+DoubtfireAngularJSModule.factory('TransitionHooksService', downgradeInjectable(TransitionHooksService));
+DoubtfireAngularJSModule.factory('EditProfileService', downgradeInjectable(EditProfileDialogService));
+DoubtfireAngularJSModule.factory('PrivacyPolicy', downgradeInjectable(PrivacyPolicy));
 
 // directive -> component
 DoubtfireAngularJSModule.directive(
