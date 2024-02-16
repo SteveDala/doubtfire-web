@@ -233,6 +233,9 @@ import {TaskSubmissionHistoryComponent} from './tasks/task-submission-history/ta
 import {HeaderComponent} from './common/header/header.component';
 import {GlobalStateService} from './projects/states/index/global-state.service';
 import {UnauthorisedComponent} from './errors/states/unauthorised/unauthorised.component';
+import { TeachingPeriodUnitImportService } from './admin/states/teaching-periods/teaching-period-unit-import/teaching-period-unit-import.dialog';
+import { ProgressBurndownChartComponent } from './visualisations/progress-burndown-chart/progressburndownchart.component';
+import { TaskVisualisationComponent } from './visualisations/task-visualisation/taskvisualisation.component';
 
 export const DoubtfireAngularJSModule = angular
   .module('doubtfire', [

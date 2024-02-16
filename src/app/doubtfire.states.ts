@@ -635,7 +635,6 @@ export const doubtfireStates = [
   ViewAllProjectsState,
   ViewAllUnits,
   AdministerUnits,
-<<<<<<< HEAD
   ScormPlayerNormalState,
   ScormPlayerReviewState,
   ScormPlayerStudentReviewState,
@@ -648,9 +647,7 @@ export const doubtfireStates = [
   TutorAttendance,
   UnauthorisedState,
   AbstractProjectState,
-=======
   ProjectRootState,
->>>>>>> 7d0092b8 (refactor: introduce project root state)
   ProjectDashboardState,
   UnitRootState,
   TaskViewerState,
