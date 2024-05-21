@@ -15,8 +15,11 @@ import {ProjectPlanComponent} from './projects/states/plan/project-plan.componen
 import {JplagReportViewerComponent} from './projects/states/jplag/jplag-report-viewer.component';
 import {LtiDashboardComponent} from './home/states/lti-dashboard/lti-dashboard.component';
 import {LtiUnitLinkComponent} from './home/states/lti-unit-link/lti-unit-link.component';
-import { Ng2ViewDeclaration } from '@uirouter/angular';
-import { UnauthorisedComponent } from './errors/states/unauthorised/unauthorised.component';
+import {Ng2ViewDeclaration} from '@uirouter/angular';
+import {UnauthorisedComponent} from './errors/states/unauthorised/unauthorised.component';
+import {ProjectDashboardComponent} from './projects/states/dashboard/project-dashboard/project-dashboard.component';
+import {AppInjector} from './app-injector';
+import {ProjectService} from './api/services/project.service';
 
 /*
  * Use this file to store any states that are sourced by angular components.
@@ -104,7 +107,7 @@ const HomeState: NgHybridStateDeclaration = {
 // };
 
 /**
- * Define the new home state.
+ * Define the new inbox state.
  */
 // const InboxState: NgHybridStateDeclaration = {
 //   name: 'inbox',
@@ -289,6 +292,37 @@ const AdministerUnits: NgHybridStateDeclaration = {
   data: {
     pageTitle: 'Administer units',
     roleWhiteList: ['Admin'],
+  },
+};
+
+const AbstractProjectState: NgHybridStateDeclaration = {
+  name: 'projects2',
+  url: '/projects2/:projectId',
+  abstract: true,
+  // views: {
+  // },
+  resolve: {
+    project: function ($stateParams) {
+      console.log('Getting project');
+      const projectService = AppInjector.get(ProjectService);
+      return projectService.get({id: $stateParams.project_id});
+    },
+  },
+};
+
+// projectDashboardState which gets the project from the abstract state above
+const ProjectDashboardState: NgHybridStateDeclaration = {
+  name: 'dashboard2',
+  parent: 'projects2',
+  url: '/dashboard2',
+  views: {
+    main: {
+      component: ProjectDashboardComponent,
+    },
+  },
+  data: {
+    pageTitle: 'Project Dashboard',
+    roleWhitelist: ['Student', 'Tutor', 'Convenor', 'Admin'],
   },
 };
 
@@ -620,5 +654,7 @@ export const doubtfireStates = [
   LtiDashboardState,
   LtiUnitLinkState,
   TutorAttendance,
-  UnauthorisedState
+  UnauthorisedState,
+  AbstractProjectState,
+  ProjectDashboardState,
 ];

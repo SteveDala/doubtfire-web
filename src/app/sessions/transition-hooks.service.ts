@@ -32,7 +32,7 @@ export class TransitionHooksService {
     // Hook into "onBefore" to check transitions before they occur
     this.transitions.onBefore({}, (transition) => {
       // log all possible states
-      // console.log(transition.router.stateRegistry.get())
+      console.log(transition.router.stateRegistry.get());
 
       // Where is the transition coming from and going to?
       const toState = transition.to().name;
