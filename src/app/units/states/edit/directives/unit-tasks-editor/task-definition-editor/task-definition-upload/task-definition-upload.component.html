@@ -51,12 +51,16 @@
   <ng-container matColumnDef="row-actions" sticky>
     <th style="width: 10%" mat-header-cell *matHeaderCellDef></th>
     <td style="width: 10%" mat-cell *matCellDef="let upreq">
+<<<<<<< HEAD
       <button
         mat-icon-button
         aria-label="delete upload requirement"
         color="warn"
         (click)="removeUpReq(upreq)"
       >
+=======
+      <button mat-icon-button aria-label="delete upload requirement" (click)="removeUpReq(upreq)">
+>>>>>>> 0c617246 (style: update to material 3)
         <mat-icon>delete</mat-icon>
       </button>
     </td>
@@ -68,8 +72,13 @@
       <mat-toolbar>
         <mat-toolbar-row>
           <span class="flex flex-grow"></span>
+<<<<<<< HEAD
           <button mat-flat-button color="primary" (click)="addUpReq()">
             <mat-icon>add</mat-icon> Add
+=======
+          <button mat-mini-fab (click)="addUpReq()">
+            <mat-icon>add</mat-icon>
+>>>>>>> 0c617246 (style: update to material 3)
           </button>
         </mat-toolbar-row>
       </mat-toolbar>
@@ -81,6 +90,7 @@
   <tr mat-footer-row *matFooterRowDef="['actions']"></tr>
 </table>
 
+<<<<<<< HEAD
 @if (taskDefinition.needsJplag) {
   <div class="flex-grow flex flex-row gap-4">
     <mat-form-field appearance="outline" class="basis-1/2">
@@ -126,4 +136,22 @@
     </div>
     <div class="basis-1/2"></div>
   </div>
+=======
+@if (taskDefinition.needsMoss) {
+  <div class="flex-grow flex flex-row gap-4">
+    <mat-form-field appearance="outline" class="basis-1/2">
+      <mat-label>Language used for Moss checks</mat-label>
+      <mat-select [(ngModel)]="taskDefinition.mossLanguage">
+        <mat-option value="moss c">C</mat-option>
+        <mat-option value="moss csharp">C#</mat-option>
+        <mat-option value="moss cc">C++</mat-option>
+        <mat-option value="moss python">Python</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="basis-1/2">
+      <mat-label>Similarity percent to flag for Moss checks</mat-label>
+      <input matInput [(ngModel)]="taskDefinition.plagiarismWarnPct" type="number" />
+    </mat-form-field>
+  </div>
+>>>>>>> 0c617246 (style: update to material 3)
 }
