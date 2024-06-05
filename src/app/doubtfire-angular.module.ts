@@ -199,6 +199,7 @@ import {UnitDropdownComponent} from './common/header/unit-dropdown/unit-dropdown
 import {TaskDropdownComponent} from './common/header/task-dropdown/task-dropdown.component';
 import {SplashScreenComponent} from './home/splash-screen/splash-screen.component';
 import {HttpErrorInterceptor} from './common/services/http-error.interceptor';
+import {ProjectDashboardComponent} from './projects/states/dashboard/project-dashboard/project-dashboard.component';
 import {TaskDefinitionService} from './api/services/task-definition.service';
 import {NewTeachingPeriodDialogComponent} from './admin/states/teaching-periods/teaching-period-list/teaching-period-list.component';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -336,7 +337,11 @@ import {TasksViewerComponent} from './units/states/tasks/tasks-viewer/tasks-view
     TaskDropdownComponent,
     SplashScreenComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    ProjectDashboardComponent,
+>>>>>>> a869e7cd (refactor: (refactor) resolve data from route)
     ObjectSelectComponent,
     WelcomeComponent,
     AcceptEulaComponent,

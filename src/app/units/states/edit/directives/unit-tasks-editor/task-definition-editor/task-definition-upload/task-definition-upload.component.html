@@ -25,11 +25,19 @@
   <ng-container matColumnDef="tii-check" sticky>
     <th style="width: 20%" mat-header-cell *matHeaderCellDef>Check Similarity</th>
     <td style="width: 20%" mat-cell *matCellDef="let upreq">
+<<<<<<< HEAD
       @if (upreq.type === 'document' && tiiEnabled()) {
         <mat-checkbox [(ngModel)]="upreq.tiiCheck">TurnItIn</mat-checkbox>
       }
       @if (upreq.type === 'code') {
         <mat-checkbox [(ngModel)]="upreq.tiiCheck">Jplag</mat-checkbox>
+=======
+      @if (upreq.type === 'document') {
+        <mat-checkbox [(ngModel)]="upreq.tiiCheck">TurnItIn</mat-checkbox>
+      }
+      @if (upreq.type === 'code') {
+        <mat-checkbox [(ngModel)]="upreq.tiiCheck">Moss</mat-checkbox>
+>>>>>>> a869e7cd (refactor: (refactor) resolve data from route)
       }
     </td>
   </ng-container>
@@ -81,6 +89,7 @@
   <tr mat-footer-row *matFooterRowDef="['actions']"></tr>
 </table>
 
+<<<<<<< HEAD
 @if (taskDefinition.needsJplag) {
   <div class="flex-grow flex flex-row gap-4">
     <mat-form-field appearance="outline" class="basis-1/2">
@@ -126,4 +135,22 @@
     </div>
     <div class="basis-1/2"></div>
   </div>
+=======
+@if (taskDefinition.needsMoss) {
+  <div class="flex-grow flex flex-row gap-4">
+    <mat-form-field appearance="outline" class="basis-1/2">
+      <mat-label>Language used for Moss checks</mat-label>
+      <mat-select [(ngModel)]="taskDefinition.mossLanguage">
+        <mat-option value="moss c">C</mat-option>
+        <mat-option value="moss csharp">C#</mat-option>
+        <mat-option value="moss cc">C++</mat-option>
+        <mat-option value="moss python">Python</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="basis-1/2">
+      <mat-label>Similarity percent to flag for Moss checks</mat-label>
+      <input matInput [(ngModel)]="taskDefinition.plagiarismWarnPct" type="number" />
+    </mat-form-field>
+  </div>
+>>>>>>> a869e7cd (refactor: (refactor) resolve data from route)
 }
