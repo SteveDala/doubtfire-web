@@ -17,11 +17,7 @@ angular.module('doubtfire.units.states.index', [])
   }
 )
 
-<<<<<<< HEAD
 .controller("UnitsIndexStateCtrl", ($scope, $rootScope, $state, $stateParams, newUnitService, newProjectService, listenerService, GlobalStateService, newUserService, FeedbackTemplateService) ->
-=======
-.controller("UnitsIndexStateCtrl", ($scope, $rootScope, $state, $stateParams, newUnitService, newProjectService, listenerService, globalStateService, newUserService, alertService) ->
->>>>>>> a869e7cd (refactor: (refactor) resolve data from route)
   # Error - required unitId is missing!
   unitId = +$stateParams.unitId
   return $state.go('home') unless unitId
