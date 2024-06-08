@@ -213,7 +213,7 @@ import {TaskDashboardComponent} from './projects/states/dashboard/directives/tas
 import {InboxComponent} from './units/states/tasks/inbox/inbox.component';
 import {ProjectProgressBarComponent} from './common/project-progress-bar/project-progress-bar.component';
 import {TeachingPeriodListComponent} from './admin/states/teaching-periods/teaching-period-list/teaching-period-list.component';
-import {FChipComponent} from './common/f-chip/f-chip.component';
+import {FChipComponent} from './common/f-chip/chip.component';
 import {TaskSimilarityViewComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-similarity-view/task-similarity-view.component';
 import {FileViewerComponent} from './common/file-viewer/file-viewer.component';
 import {TaskDefinitionEditorComponent} from './units/states/edit/directives/unit-tasks-editor/task-definition-editor/task-definition-editor.component';
@@ -227,7 +227,7 @@ import {TaskDefinitionOverseerComponent} from './units/states/edit/directives/un
 import {UnitAnalyticsComponent} from './units/states/analytics/unit-analytics-route.component';
 import {FileDropComponent} from './common/file-drop/file-drop.component';
 import {UnitTaskEditorComponent} from './units/states/edit/directives/unit-tasks-editor/unit-task-editor.component';
-import {FUsersComponent} from './admin/states/f-users/f-users.component';
+import {FUsersComponent} from './admin/states/users/users.component';
 import {ProjectProgressComponent} from './common/project-progress/project-progress.component';
 import {CreateNewUnitModal} from './admin/modals/create-new-unit-modal/create-new-unit-modal.component';
 import {CreateNewUnitModalContentComponent} from './admin/modals/create-new-unit-modal/create-new-unit-modal-content.component';
