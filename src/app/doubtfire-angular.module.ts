@@ -250,6 +250,8 @@ import {FTaskSheetViewComponent} from './units/states/tasks/viewer/directives/f-
 import {TasksViewerComponent} from './units/states/tasks/tasks-viewer/tasks-viewer.component';
 import {UnitCodeComponent} from './common/unit-code/unit-code.component';
 import {GradeService} from './common/services/grade.service';
+import { UnitRootStateComponent } from './units/unit-root-state.component';
+import { TaskViewerStateComponent } from './units/task-viewer/task-viewer-state.component';
 
 @NgModule({
   // Components we declare
@@ -357,6 +359,8 @@ import {GradeService} from './common/services/grade.service';
     FTaskDetailsViewComponent,
     FTaskSheetViewComponent,
     TasksViewerComponent,
+    UnitRootStateComponent,
+    TaskViewerStateComponent,
     FUsersComponent,
     ProjectProgressComponent,
     FTaskBadgeComponent,
