@@ -243,11 +243,18 @@ import {
 import {AcceptEulaComponent} from './eula/accept-eula/accept-eula.component';
 import {TiiActionLogComponent} from './admin/tii-action-log/tii-action-log.component';
 import {TiiActionService} from './api/services/tii-action.service';
+<<<<<<< HEAD
 import {FUnitsComponent} from './admin/states/f-units/f-units.component';
 import {FUnitTaskListComponent} from './units/states/tasks/viewer/directives/f-unit-task-list/f-unit-task-list.component';
 import {FTaskDetailsViewComponent} from './units/states/tasks/viewer/directives/f-task-details-view/f-task-details-view.component';
 import {FTaskSheetViewComponent} from './units/states/tasks/viewer/directives/f-task-sheet-view/f-task-sheet-view.component';
 import {TasksViewerComponent} from './units/states/tasks/tasks-viewer/tasks-viewer.component';
+=======
+import {FUnitsComponent} from './admin/states/units/units.component';
+import {FUnitTaskListComponent} from './units/task-viewer/directives/unit-task-list/unit-task-list.component';
+import {FTaskDetailsViewComponent} from './units/task-viewer/directives/task-details-view/task-details-view.component';
+import {FTaskSheetViewComponent} from './units/task-viewer/directives/task-sheet-view/task-sheet-view.component';
+>>>>>>> 3ed44798 (refactor: move task viewer into state component)
 import {UnitCodeComponent} from './common/unit-code/unit-code.component';
 import {GradeService} from './common/services/grade.service';
 import { UnitRootStateComponent } from './units/unit-root-state.component';
@@ -358,7 +365,6 @@ import { TaskViewerStateComponent } from './units/task-viewer/task-viewer-state.
     FUnitTaskListComponent,
     FTaskDetailsViewComponent,
     FTaskSheetViewComponent,
-    TasksViewerComponent,
     UnitRootStateComponent,
     TaskViewerStateComponent,
     FUsersComponent,
