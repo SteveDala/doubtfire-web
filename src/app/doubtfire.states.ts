@@ -24,6 +24,7 @@ import {Observable, first} from 'rxjs';
 import {GlobalStateService} from './projects/states/index/global-state.service';
 import {Project} from './api/models/project';
 import {UnitRootState} from './units/unit-root-state.component';
+import {ProjectRootState} from './projects/states/project-root-state.component';
 import { TaskViewerState } from './units/task-viewer/task-viewer-state.component';
 
 /*
@@ -300,43 +301,13 @@ const AdministerUnits: NgHybridStateDeclaration = {
   },
 };
 
-const AbstractProjectState: NgHybridStateDeclaration = {
-  name: 'projects2',
-  url: '/projects2/:projectId',
-  abstract: true,
-  views: {
-    main: {
-      component: ProjectDashboardComponent,
-    },
-  },
-  resolve: {
-    project$: function ($stateParams) {
-      const projectService = AppInjector.get(ProjectService);
-      const globalState = AppInjector.get(GlobalStateService);
-
-      return new Observable<Project>((observer) => {
-        globalState.onLoad(() => {
-          projectService
-            .get({id: $stateParams.projectId}, {cacheBehaviourOnGet: 'cacheQuery'})
-            .subscribe({
-              next: (project: Project) => {
-                observer.next(project);
-                observer.complete();
-              },
-            });
-        });
-      }).pipe(first());
-    },
-  },
-};
-
 // projectDashboardState which gets the project from the abstract state above
 const ProjectDashboardState: NgHybridStateDeclaration = {
   name: 'dashboard2',
   parent: 'projects2',
   url: '/dashboard2',
   views: {
-    main: {
+    projectView: {
       component: ProjectDashboardComponent,
     },
   },
@@ -664,6 +635,7 @@ export const doubtfireStates = [
   ViewAllProjectsState,
   ViewAllUnits,
   AdministerUnits,
+<<<<<<< HEAD
   ScormPlayerNormalState,
   ScormPlayerReviewState,
   ScormPlayerStudentReviewState,
@@ -676,6 +648,9 @@ export const doubtfireStates = [
   TutorAttendance,
   UnauthorisedState,
   AbstractProjectState,
+=======
+  ProjectRootState,
+>>>>>>> 7d0092b8 (refactor: introduce project root state)
   ProjectDashboardState,
   UnitRootState,
   TaskViewerState,
