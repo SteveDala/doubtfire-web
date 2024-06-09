@@ -15,6 +15,7 @@ import player from 'lottie-web';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
@@ -228,7 +229,7 @@ import {UnitAnalyticsComponent} from './units/states/analytics/unit-analytics-ro
 import {FileDropComponent} from './common/file-drop/file-drop.component';
 import {UnitTaskEditorComponent} from './units/states/edit/directives/unit-tasks-editor/unit-task-editor.component';
 import {FUsersComponent} from './admin/states/users/users.component';
-import {ProjectProgressComponent} from './common/project-progress/project-progress.component';
+import {ProjectProgressGaugeComponent} from './common/project-progress/project-progress-gauge.component';
 import {CreateNewUnitModal} from './admin/modals/create-new-unit-modal/create-new-unit-modal.component';
 import {CreateNewUnitModalContentComponent} from './admin/modals/create-new-unit-modal/create-new-unit-modal-content.component';
 // Note we need a separate function as it's required
@@ -257,9 +258,10 @@ import {FTaskSheetViewComponent} from './units/task-viewer/directives/task-sheet
 >>>>>>> 3ed44798 (refactor: move task viewer into state component)
 import {UnitCodeComponent} from './common/unit-code/unit-code.component';
 import {GradeService} from './common/services/grade.service';
-import { UnitRootStateComponent } from './units/unit-root-state.component';
-import { TaskViewerStateComponent } from './units/task-viewer/task-viewer-state.component';
-import { ProjectRootStateComponent } from './projects/states/project-root-state.component';
+import {UnitRootStateComponent} from './units/unit-root-state.component';
+import {TaskViewerStateComponent} from './units/task-viewer/task-viewer-state.component';
+import {ProjectRootStateComponent} from './projects/states/project-root-state.component';
+import {ProjectProgressDashboardComponent} from './projects/project-progress-dashboard/project-progress-dashboard.component';
 
 @NgModule({
   // Components we declare
@@ -316,6 +318,7 @@ import { ProjectRootStateComponent } from './projects/states/project-root-state.
     TaskCommentsViewerComponent,
     UserIconComponent,
     AudioPlayerComponent,
+    ProjectProgressDashboardComponent,
     MarkedPipe,
     HumanizedDatePipe,
     IsActiveUnitRole,
@@ -370,7 +373,7 @@ import { ProjectRootStateComponent } from './projects/states/project-root-state.
     ProjectRootStateComponent,
     TaskViewerStateComponent,
     FUsersComponent,
-    ProjectProgressComponent,
+    ProjectProgressGaugeComponent,
     FTaskBadgeComponent,
     FUnitsComponent,
 >>>>>>> 8beef701 (feat: add new progress component)
@@ -474,6 +477,7 @@ import { ProjectRootStateComponent } from './projects/states/project-root-state.
     DragDropModule,
     ScrollingModule,
     MatToolbarModule,
+    MatSidenavModule,
     MatFormFieldModule,
     MatAutocompleteModule,
     MatInputModule,
@@ -503,7 +507,6 @@ import { ProjectRootStateComponent } from './projects/states/project-root-state.
     MatExpansionModule,
     MatCardModule,
     MatGridListModule,
-    MatSelectModule,
     MatToolbarModule,
     MatTabsModule,
     UpgradeModule,
