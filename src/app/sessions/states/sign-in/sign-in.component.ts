@@ -177,12 +177,27 @@ export class SignInComponent implements OnInit {
           }
         } else {
           this.globalState.isLoadingSubject.next(false);
+<<<<<<< HEAD
           this.authMethodLoaded = true;
           this.showCredentials = true;
           return wait.then();
         }
       },
       error: (err) => {
+=======
+          // We are SSO and no credentials
+          this.showCredentials = false;
+          return wait.then();
+        }
+      } else {
+        this.globalState.isLoadingSubject.next(false);
+        this.authMethodLoaded = true;
+        this.showCredentials = true;
+        return wait.then();
+      }
+    }),
+      function (err) {
+>>>>>>> 6954ac62 (fix: ensure loading screen removed in sign in component)
         this.authMethodFailed = true;
         // this.error = err;
 
