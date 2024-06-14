@@ -1,4 +1,4 @@
-import { HttpResponse } from '@angular/common/http';
+import {HttpResponse} from '@angular/common/http';
 import {
   AfterViewInit,
   Component,
@@ -8,6 +8,8 @@ import {
   OnDestroy,
   SimpleChanges,
   ViewChild,
+  OnInit,
+  AfterViewInit,
 } from '@angular/core';
 import {PDFDocumentProxy, PdfViewerComponent} from 'ng2-pdf-viewer';
 import {FileDownloaderService} from '../file-downloader/file-downloader.service';
