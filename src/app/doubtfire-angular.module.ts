@@ -258,6 +258,7 @@ import {ProjectRootStateComponent} from './projects/states/project-root-state.co
 import {ProjectProgressDashboardComponent} from './projects/project-progress-dashboard/project-progress-dashboard.component';
 import { ProgressBurndownChartComponent } from './visualisations/progress-burndown-chart/progressburndownchart.component';
 import { TaskVisualisationComponent } from './visualisations/task-visualisation/taskvisualisation.component';
+import { ChartBaseComponent } from './common/chart-base/chart-base-component/chart-base-component.component';
 
 @NgModule({
   // Components we declare
@@ -368,6 +369,7 @@ import { TaskVisualisationComponent } from './visualisations/task-visualisation/
     FUsersComponent,
     FTaskBadgeComponent,
     FUnitsComponent,
+<<<<<<< HEAD
     CommentsModalComponent,
     ScormPlayerComponent,
     ScormCommentComponent,
@@ -408,6 +410,12 @@ import { TaskVisualisationComponent } from './visualisations/task-visualisation/
     TaskPlannerCardComponent,
     TaskPlannerPrerequisitesModalComponent,
     TaskOverseerReportComponent,
+=======
+    ChartBaseComponent,
+    ProgressBurndownChartComponent,
+    TaskVisualisationComponent
+
+>>>>>>> bfecd086 (fix: new burndown and task status count)
   ],
   providers: [
     // Services we provide
