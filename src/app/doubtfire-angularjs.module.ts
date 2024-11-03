@@ -43,7 +43,6 @@ import 'build/src/app/tasks/modals/upload-submission-modal/upload-submission-mod
 import 'build/src/app/tasks/modals/grade-task-modal/grade-task-modal.js';
 import 'build/src/app/tasks/modals/modals.js';
 import 'build/src/app/tasks/tasks.js';
-import 'build/src/app/tasks/project-tasks-list/project-tasks-list.js';
 import 'build/src/app/tasks/task-ilo-alignment/task-ilo-alignment.js';
 import 'build/src/app/tasks/task-ilo-alignment/task-ilo-alignment-rater/task-ilo-alignment-rater.js';
 import 'build/src/app/tasks/task-ilo-alignment/modals/task-ilo-alignment.js';
@@ -193,6 +192,7 @@ import {PortfolioIncludedTasksComponent} from './projects/states/portfolio/direc
 import {TaskSimilarityViewComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-similarity-view/task-similarity-view.component';
 import {UploadGradesComponent} from './units/states/portfolios/upload-grades/upload-grades.component';
 import {AboutDoubtfireModal} from 'src/app/common/modals/about-doubtfire-modal/about-doubtfire-modal.component';
+import {ProjectTasksListComponent} from './tasks/project-tasks-list/project-tasks-list.component';
 import {TaskCommentComposerComponent} from 'src/app/tasks/task-comment-composer/task-comment-composer.component';
 import {DoubtfireConstants} from 'src/app/config/constants/doubtfire-constants';
 import {IntelligentDiscussionPlayerComponent} from './tasks/task-comments-viewer/intelligent-discussion-player/intelligent-discussion-player.component';
@@ -340,6 +340,10 @@ DoubtfireAngularJSModule.factory(
 );
 
 // directive -> component
+DoubtfireAngularJSModule.directive(
+  'fProjectTasksList',
+  downgradeComponent({component: ProjectTasksListComponent}),
+);
 DoubtfireAngularJSModule.directive(
   'taskCommentComposer',
   downgradeComponent({component: TaskCommentComposerComponent}),

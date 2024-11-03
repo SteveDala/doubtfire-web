@@ -80,6 +80,7 @@ import {
   uploadSubmissionModalProvider,
   ConfirmationModalProvider,
 } from './ajs-upgraded-providers';
+import {ProjectTasksListComponent} from './tasks/project-tasks-list/project-tasks-list.component';
 import {
   TaskCommentComposerComponent,
   DiscussionComposerDialog,
@@ -153,6 +154,8 @@ import {TasksInTutorialsPipe} from './common/filters/tasks-in-tutorials.pipe';
 import {TasksForInboxSearchPipe} from './common/filters/tasks-for-inbox-search.pipe';
 import {StatusIconComponent} from './common/status-icon/status-icon.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import {TasksForGroupsetPipe} from './common/filters/tasks-for-group-set.pipe';
+import {OrderByPipe} from './common/filters/order-by.pipe';
 import {CheckForUpdateService} from './sessions/service-worker-updater/check-for-update.service';
 import {
   ActivityTypeService,
@@ -268,6 +271,7 @@ import { ChartBaseComponent } from './common/chart-base/chart-base-component/cha
     D2lUnitDetailsFormComponent,
     D2lTransferComponent,
     TeachingPeriodUnitImportDialogComponent,
+    ProjectTasksListComponent,
     TaskCommentComposerComponent,
     AudioCommentRecorderComponent,
     MicrophoneTesterComponent,
@@ -324,6 +328,8 @@ import { ChartBaseComponent } from './common/chart-base/chart-base-component/cha
     PdfViewerPanelComponent,
     StaffTaskListComponent,
     TaskSimilarityViewComponent,
+    TasksForGroupsetPipe,
+    OrderByPipe,
     FiltersPipe,
     TasksOfTaskDefinitionPipe,
     TasksInTutorialsPipe,
@@ -369,7 +375,6 @@ import { ChartBaseComponent } from './common/chart-base/chart-base-component/cha
     FUsersComponent,
     FTaskBadgeComponent,
     FUnitsComponent,
-<<<<<<< HEAD
     CommentsModalComponent,
     ScormPlayerComponent,
     ScormCommentComponent,
@@ -410,12 +415,10 @@ import { ChartBaseComponent } from './common/chart-base/chart-base-component/cha
     TaskPlannerCardComponent,
     TaskPlannerPrerequisitesModalComponent,
     TaskOverseerReportComponent,
-=======
     ChartBaseComponent,
     ProgressBurndownChartComponent,
     TaskVisualisationComponent
 
->>>>>>> bfecd086 (fix: new burndown and task status count)
   ],
   providers: [
     // Services we provide
