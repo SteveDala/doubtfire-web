@@ -262,6 +262,28 @@ import {ProjectProgressDashboardComponent} from './projects/project-progress-das
 import { ProgressBurndownChartComponent } from './visualisations/progress-burndown-chart/progressburndownchart.component';
 import { TaskVisualisationComponent } from './visualisations/task-visualisation/taskvisualisation.component';
 import { ChartBaseComponent } from './common/chart-base/chart-base-component/chart-base-component.component';
+import {ScormPlayerComponent} from './common/scorm-player/scorm-player.component';
+import {ScormAdapterService} from './api/services/scorm-adapter.service';
+import {ScormCommentComponent} from './tasks/task-comments-viewer/scorm-comment/scorm-comment.component';
+import {TaskScormCardComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-scorm-card/task-scorm-card.component';
+import {TestAttemptService} from './api/services/test-attempt.service';
+import {ScormExtensionCommentComponent} from './tasks/task-comments-viewer/scorm-extension-comment/scorm-extension-comment.component';
+import {ScormExtensionModalComponent} from './common/modals/scorm-extension-modal/scorm-extension-modal.component';
+import { GradeIconComponent } from './common/grade-icon/grade-icon.component';
+import { GradeTaskModalComponent } from './tasks/modals/grade-task-modal/grade-task-modal.component';
+
+// See https://stackoverflow.com/questions/55721254/how-to-change-mat-datepicker-date-format-to-dd-mm-yyyy-in-simplest-way/58189036#58189036
+const MY_DATE_FORMAT = {
+  parse: {
+    dateInput: 'dd/MM/yyyy', // this is how your date will be parsed from Input
+  },
+  display: {
+    dateInput: 'dd/MM/yyyy', // this is how your date will get displayed on the Input
+    monthYearLabel: 'MMMM yyyy',
+    dateA11yLabel: 'do MMMM yyyy',
+    monthYearA11yLabel: 'MMMM yyyy',
+  },
+};
 
 @NgModule({
   // Components we declare
@@ -343,6 +365,9 @@ import { ChartBaseComponent } from './common/chart-base/chart-base-component/cha
     UnitDropdownComponent,
     TaskDropdownComponent,
     SplashScreenComponent,
+    ProjectDashboardComponent,
+    GradeIconComponent,
+    GradeTaskModalComponent,
     ObjectSelectComponent,
     WelcomeComponent,
     AcceptEulaComponent,

@@ -40,7 +40,6 @@ import 'build/src/app/visualisations/achievement-custom-bar-chart.js';
 import 'build/src/app/visualisations/alignment-bar-chart.js';
 import 'build/src/app/visualisations/achievement-box-plot.js';
 import 'build/src/app/tasks/modals/upload-submission-modal/upload-submission-modal.js';
-import 'build/src/app/tasks/modals/grade-task-modal/grade-task-modal.js';
 import 'build/src/app/tasks/modals/modals.js';
 import 'build/src/app/tasks/tasks.js';
 import 'build/src/app/tasks/task-ilo-alignment/task-ilo-alignment.js';
@@ -150,7 +149,6 @@ import {AuthenticationService} from './api/services/authentication.service';
 import {ProjectService} from './api/services/project.service';
 import {ObjectSelectComponent} from './common/obect-select/object-select.component';
 import {TaskDefinitionService} from './api/services/task-definition.service';
-import {EditProfileDialogService} from './common/modals/edit-profile-dialog/edit-profile-dialog.service';
 import {GroupService} from './api/services/group.service';
 import {UserBadgeComponent} from './common/user-badge/user-badge.component';
 import {TaskStatusCardComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-status-card/task-status-card.component';
@@ -234,6 +232,9 @@ import {HeaderComponent} from './common/header/header.component';
 import {GlobalStateService} from './projects/states/index/global-state.service';
 import {UnauthorisedComponent} from './errors/states/unauthorised/unauthorised.component';
 import { TeachingPeriodUnitImportService } from './admin/states/teaching-periods/teaching-period-unit-import/teaching-period-unit-import.dialog';
+import { FileDownloaderService } from './common/file-downloader/file-downloader.service';
+import { GradeTaskModalService } from './tasks/modals/grade-task-modal/grade-task-modal.service';
+import { EditProfileDialogService } from './common/modals/edit-profile-dialog/edit-profile-dialog.service';
 import { ProgressBurndownChartComponent } from './visualisations/progress-burndown-chart/progressburndownchart.component';
 import { TaskVisualisationComponent } from './visualisations/task-visualisation/taskvisualisation.component';
 
@@ -338,11 +339,16 @@ DoubtfireAngularJSModule.factory(
   'sidekiqProgressModalService',
   downgradeInjectable(SidekiqProgressModalService),
 );
+DoubtfireAngularJSModule.factory('GradeTaskModal', downgradeInjectable(GradeTaskModalService));
 
 // directive -> component
 DoubtfireAngularJSModule.directive(
   'fProjectTasksList',
   downgradeComponent({component: ProjectTasksListComponent}),
+);
+DoubtfireAngularJSModule.directive(
+  'gradeIcon',
+  downgradeComponent({component: GradeIconComponent}),
 );
 DoubtfireAngularJSModule.directive(
   'taskCommentComposer',
