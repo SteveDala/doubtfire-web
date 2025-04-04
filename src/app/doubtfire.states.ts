@@ -20,6 +20,7 @@ import {ProjectDashboardComponent} from './projects/states/dashboard/project-das
 import {UnitRootState} from './units/unit-root-state.component';
 import {ProjectRootState} from './projects/states/project-root-state.component';
 import { TaskViewerState } from './units/task-viewer/task-viewer-state.component';
+import { GrantExtensionFormComponent } from './admin/modals/grant-extension-form/grant-extension-form.component';
 
 /*
  * Use this file to store any states that are sourced by angular components.
@@ -254,6 +255,20 @@ const ViewAllProjectsState: NgHybridStateDeclaration = {
   data: {
     pageTitle: 'All Units'
   },
+};
+
+const GrantExtensionState: NgHybridStateDeclaration = {
+  name: 'grant-extension',
+  url: '/grant-extension',
+  views: {
+    main: {
+      component: GrantExtensionFormComponent,
+    },
+  },
+  data: {
+    pageTitle: 'Grant Extension',
+    roleWhitelist: ['Admin']
+  }
 };
 
 const AdministerUnits: NgHybridStateDeclaration = {
@@ -625,4 +640,5 @@ export const doubtfireStates = [
   ProjectDashboardState,
   UnitRootState,
   TaskViewerState,
+  GrantExtensionState
 ];
