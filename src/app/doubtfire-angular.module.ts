@@ -288,7 +288,8 @@ const MY_DATE_FORMAT = {
   },
 };
 import {UnitStudentEnrolmentModalComponent} from './units/modals/unit-student-enrolment-modal/unit-student-enrolment-modal.component';
-import { PrivacyPolicy } from './config/privacy-policy/privacy-policy';
+import {PrivacyPolicy} from './config/privacy-policy/privacy-policy';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 
 @NgModule({
   // Components we declare
@@ -545,6 +546,7 @@ import { PrivacyPolicy } from './config/privacy-policy/privacy-policy';
     OverseerStepService,
     OverseerStepResultService,
     UnitStudentEnrolmentModalComponent,
+    provideAnimationsAsync(),
   ],
   imports: [
     FlexLayoutModule,

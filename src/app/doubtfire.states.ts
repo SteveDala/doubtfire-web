@@ -19,8 +19,8 @@ import {UnauthorisedComponent} from './errors/states/unauthorised/unauthorised.c
 import {ProjectDashboardComponent} from './projects/states/dashboard/project-dashboard/project-dashboard.component';
 import {UnitRootState} from './units/unit-root-state.component';
 import {ProjectRootState} from './projects/states/project-root-state.component';
-import { TaskViewerState } from './units/task-viewer/task-viewer-state.component';
-import { GrantExtensionFormComponent } from './admin/modals/grant-extension-form/grant-extension-form.component';
+import {TaskViewerState} from './units/task-viewer/task-viewer-state.component';
+import {GrantExtensionFormComponent} from './admin/modals/grant-extension-form/grant-extension-form.component';
 
 /*
  * Use this file to store any states that are sourced by angular components.
@@ -257,20 +257,6 @@ const ViewAllProjectsState: NgHybridStateDeclaration = {
   },
 };
 
-const GrantExtensionState: NgHybridStateDeclaration = {
-  name: 'grant-extension',
-  url: '/grant-extension',
-  views: {
-    main: {
-      component: GrantExtensionFormComponent,
-    },
-  },
-  data: {
-    pageTitle: 'Grant Extension',
-    roleWhitelist: ['Admin']
-  }
-};
-
 const AdministerUnits: NgHybridStateDeclaration = {
   name: 'admin/units', // This is the name of the state to jump to - so ui-sref="users" to jump here
   url: '/admin/units', // You get here with this url
@@ -305,6 +291,21 @@ const ProjectDashboardState: NgHybridStateDeclaration = {
     pageTitle: 'Unit Dashboard',
   },
 };
+
+const ProjectDashboardStateV1: NgHybridStateDeclaration = {
+  name: 'dashboard',
+  parent: 'projects',
+  url: '/dashboard',
+  views: {
+    projectView: {
+      component: ProjectDashboardComponent,  // <-- Your new Angular Component
+    },
+  },
+  data: {
+    pageTitle: 'Unit Dashboard',
+  },
+};
+
 
 const ViewAllUnits: NgHybridStateDeclaration = {
   name: 'view-all-units',
@@ -638,6 +639,7 @@ export const doubtfireStates = [
   // AbstractProjectState,
   ProjectRootState,
   ProjectDashboardState,
+  ProjectDashboardStateV1,
   UnitRootState,
   TaskViewerState,
   GrantExtensionState
