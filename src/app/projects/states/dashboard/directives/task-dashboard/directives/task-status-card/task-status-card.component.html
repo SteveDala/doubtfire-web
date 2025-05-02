@@ -62,8 +62,10 @@
       Show Discussion QR
     </button>
     <!-- Always show for testing -->
-    <button mat-stroked-button color="primary" (click)="openGrantExtensionDialog()">
-      Grant Extension
-    </button>
+    @if (currentUser?.role === 'Admin' || currentUser?.role === 'Convenor') {
+      <button mat-stroked-button (click)="openGrantExtensionDialog()">
+        Grant Extension
+      </button>
+    }
   </mat-card-actions>
 </mat-card>

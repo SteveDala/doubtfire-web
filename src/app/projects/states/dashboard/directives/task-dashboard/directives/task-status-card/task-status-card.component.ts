@@ -29,6 +29,7 @@ export class TaskStatusCardComponent implements OnChanges, AfterViewInit {
     private submissionTypeModalService: SubmissionTypeModalService,
     private userService: UserService,
     private dialog: MatDialog,
+    private userService: UserService,
   ) {}
 
   @Input() task: Task;
@@ -119,6 +120,10 @@ export class TaskStatusCardComponent implements OnChanges, AfterViewInit {
       width: '600px',
       disableClose: true,
     });
+  }
+
+  get currentUser() {
+    return this.userService.currentUser;
   }
 
 }
