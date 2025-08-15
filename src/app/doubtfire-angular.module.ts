@@ -290,6 +290,8 @@ const MY_DATE_FORMAT = {
 import {UnitStudentEnrolmentModalComponent} from './units/modals/unit-student-enrolment-modal/unit-student-enrolment-modal.component';
 import {PrivacyPolicy} from './config/privacy-policy/privacy-policy';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import { StaffGrantExtensionComponent } from './units/states/tasks/staff-grant-extension/staff-grant-extension.component';
+import { StaffGrantExtensionFormComponent } from './units/states/tasks/staff-grant-extension/grant-extension-form/grant-extension-form.component';
 
 @NgModule({
   // Components we declare
@@ -451,6 +453,8 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
     ProgressBurndownChartComponent,
     TaskVisualisationComponent
     NotificationsButtonComponent,
+    StaffGrantExtensionComponent,
+    StaffTaskListComponent,
   ],
   providers: [
     // Services we provide
@@ -600,6 +604,7 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
     EmojiModule,
     PdfViewerModule,
     LottieComponent,
+    StaffGrantExtensionFormComponent,
     UIRouterUpgradeModule.forRoot({states: doubtfireStates}),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

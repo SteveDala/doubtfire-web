@@ -16,6 +16,7 @@ import {LtiDashboardComponent} from './home/states/lti-dashboard/lti-dashboard.c
 import {LtiUnitLinkComponent} from './home/states/lti-unit-link/lti-unit-link.component';
 import {Ng2ViewDeclaration} from '@uirouter/angular';
 import {UnauthorisedComponent} from './errors/states/unauthorised/unauthorised.component';
+import {StaffGrantExtensionComponent} from './units/states/tasks/staff-grant-extension/staff-grant-extension.component';
 import {ProjectDashboardComponent} from './projects/states/dashboard/project-dashboard/project-dashboard.component';
 import {UnitRootState} from './units/unit-root-state.component';
 import {ProjectRootState} from './projects/states/project-root-state.component';
@@ -597,6 +598,24 @@ const UnauthorisedState: NgHybridStateDeclaration = {
   },
 };
 /**
+ * Define the Staff Grant Extension state.
+ */
+const StaffGrantExtensionState: NgHybridStateDeclaration = {
+  name: 'staff-grant-extension',
+  url: '/staff-grant-extension',
+  views: {
+    main: {
+      component: StaffGrantExtensionComponent,
+    },
+  },
+
+  data: {
+    pageTitle: 'Staff Grant Extension',
+    roleWhitelist: ['Admin', 'Convenor'],
+  },
+};
+
+/**
  * Export the list of states we have created in angular
  */
 export const doubtfireStates = [
@@ -627,4 +646,5 @@ export const doubtfireStates = [
   UnitRootState,
   TaskViewerState,
   GrantExtensionState
+  StaffGrantExtensionState,
 ];
