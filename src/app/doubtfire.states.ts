@@ -22,6 +22,7 @@ import {UnitRootState} from './units/unit-root-state.component';
 import {ProjectRootState} from './projects/states/project-root-state.component';
 import {TaskViewerState} from './units/task-viewer/task-viewer-state.component';
 import {GrantExtensionFormComponent} from './admin/modals/grant-extension-form/grant-extension-form.component';
+import {UnitAnalyticsComponent} from './units/states/analytics/unit-analytics-route.component'; // Todo @SGE team: Replace with SGE component
 
 /*
  * Use this file to store any states that are sourced by angular components.
@@ -597,6 +598,7 @@ const UnauthorisedState: NgHybridStateDeclaration = {
     roleWhitelist: ['Student', 'Tutor', 'Convenor', 'Admin'],
   },
 };
+
 /**
  * Define the Staff Grant Extension state.
  */
