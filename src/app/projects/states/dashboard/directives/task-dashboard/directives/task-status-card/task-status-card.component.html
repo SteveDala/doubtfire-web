@@ -22,16 +22,14 @@
         }
       </mat-select>
     </mat-form-field>
+  } @if (triggers?.length < 0) {
+  <mat-card-title>
+    <span style="display: inline-flex">
+      <status-icon [status]="task?.status" style="margin-right: 10px"></status-icon>
+      <h5>{{ task?.statusLabel() }}</h5>
+    </span>
+  </mat-card-title>
   }
-  @if (triggers?.length < 0) {
-    <mat-card-title>
-      <span style="display: inline-flex">
-        <status-icon [status]="task?.status" style="margin-right: 10px"></status-icon>
-        <h5>{{ task?.statusLabel() }}</h5>
-      </span>
-    </mat-card-title>
-  }
-
   <mat-card-content>
     <p>{{ task?.statusHelp().reason }} {{ task?.statusHelp().action }}</p>
     @if (task?.blockedByPrerequisiteTasks()) {
@@ -41,6 +39,8 @@
     }
   </mat-card-content>
 
+  @if ( task?.unit.currentUserIsStaff || task?.canApplyForExtension() || (task?.inSubmittedState() &&
+  task?.requiresFileUpload()) ) {
   <mat-card-actions class="space-x-2">
     <button
       mat-stroked-button
@@ -53,10 +53,10 @@
     </button>
 
     @if (task?.canApplyForExtension()) {
-      <button mat-stroked-button (click)="applyForExtension()">Request extension</button>
+    <button mat-stroked-button (click)="applyForExtension()">Request extension</button>
     }
     @if (task?.inSubmittedState() && task?.requiresFileUpload()) {
-      <button mat-stroked-button (click)="updateFilesInSubmission()">Upload new files</button>
+    <button mat-stroked-button (click)="updateFilesInSubmission()">Upload new files</button>
     }
     <button mat-raised-button color="primary" (click)="openDiscussionQrCode()">
       Show Discussion QR
@@ -68,4 +68,5 @@
       </button>
     }
   </mat-card-actions>
+  }
 </mat-card>
