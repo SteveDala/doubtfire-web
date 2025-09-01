@@ -24,6 +24,7 @@ import {TaskViewerState} from './units/task-viewer/task-viewer-state.component';
 import {GrantExtensionFormComponent} from './admin/modals/grant-extension-form/grant-extension-form.component';
 import {UnitAnalyticsComponent} from './units/states/analytics/unit-analytics-route.component'; // Todo @SGE team: Replace with SGE component
 
+
 /*
  * Use this file to store any states that are sourced by angular components.
  */
@@ -599,23 +600,29 @@ const UnauthorisedState: NgHybridStateDeclaration = {
   },
 };
 
-/**
- * Define the Staff Grant Extension state.
- */
 const StaffGrantExtensionState: NgHybridStateDeclaration = {
-  name: 'staff-grant-extension',
-  url: '/staff-grant-extension',
+  name: 'units/staff_grant_extension',
+  url: '/units/:unit_id/staff_grant_extension',
+  resolve: {
+    unitID: [
+      '$stateParams',
+      function ($stateParams) {
+        return $stateParams.unit_id
+      },
+    ],
+  },
   views: {
     main: {
-      component: StaffGrantExtensionComponent,
+      component: FUnitsComponent, // Todo @SGE team: Replace with SGE component - accept `unitID` as @Input
     },
   },
-
   data: {
+    task: 'Staff Grant Extension',
     pageTitle: 'Staff Grant Extension',
-    roleWhitelist: ['Admin', 'Convenor'],
+    roleWhitelist: ['Tutor', 'Convenor', 'Admin'],
   },
 };
+
 
 /**
  * Export the list of states we have created in angular
@@ -647,6 +654,6 @@ export const doubtfireStates = [
   ProjectDashboardState,
   UnitRootState,
   TaskViewerState,
-  GrantExtensionState
+  GrantExtensionState,
   StaffGrantExtensionState,
 ];
