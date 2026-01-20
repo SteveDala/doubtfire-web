@@ -124,7 +124,6 @@ import 'build/src/app/common/services/date-service.js';
 import 'build/src/app/sessions/auth/http-auth-injector.js';
 import 'build/src/app/sessions/sessions.js';
 import 'build/src/app/errors/errors.js';
-import 'build/src/app/errors/states/unauthorised/unauthorised.js';
 import 'build/src/app/errors/states/timeout/timeout.js';
 import 'build/src/app/errors/states/states.js';
 import 'build/src/common/utilService/utilService.js';
@@ -135,6 +134,7 @@ import 'build/src/i18n/resources-locale_en-AU.js';
 import 'build/src/i18n/resources-locale_en-GB.js';
 //#endregion
 
+<<<<<<< HEAD
 import {AboutDoubtfireModal} from 'src/app/common/modals/about-doubtfire-modal/about-doubtfire-modal.component';
 import {TaskCommentComposerComponent} from 'src/app/tasks/task-comment-composer/task-comment-composer.component';
 import {DoubtfireConstants} from 'src/app/config/constants/doubtfire-constants';
@@ -233,6 +233,50 @@ import {PortfolioGradeSelectStepComponent} from './projects/states/portfolio/dir
 import {PortfolioIncludedTasksComponent} from './projects/states/portfolio/directives/portfolio-review-step/portfolio-included-tasks/portfolio-included-tasks.component';
 import {TaskSimilarityViewComponent} from './projects/states/dashboard/directives/task-dashboard/directives/task-similarity-view/task-similarity-view.component';
 import {UploadGradesComponent} from './units/states/portfolios/upload-grades/upload-grades.component';
+=======
+import { AboutDoubtfireModal } from 'src/app/common/modals/about-doubtfire-modal/about-doubtfire-modal.component';
+import { TaskCommentComposerComponent } from 'src/app/tasks/task-comment-composer/task-comment-composer.component';
+import { DoubtfireConstants } from 'src/app/config/constants/doubtfire-constants';
+import { IntelligentDiscussionPlayerComponent } from './tasks/task-comments-viewer/intelligent-discussion-player/intelligent-discussion-player.component';
+import { ExtensionCommentComponent } from './tasks/task-comments-viewer/extension-comment/extension-comment.component';
+import { TaskAssessmentCommentComponent } from './tasks/task-comments-viewer/task-assessment-comment/task-assessment-comment.component';
+import { ExtensionModalService } from './common/modals/extension-modal/extension-modal.service';
+import { CalendarModalService } from './common/modals/calendar-modal/calendar-modal.service';
+import { CampusListComponent } from './admin/institution-settings/campuses/campus-list/campus-list.component';
+import { ActivityTypeListComponent } from './admin/institution-settings/activity-type-list/activity-type-list.component';
+import { InstitutionSettingsComponent } from './admin/institution-settings/institution-settings.component';
+import { CommentBubbleActionComponent } from './tasks/task-comments-viewer/comment-bubble-action/comment-bubble-action.component';
+import { UnitTutorialsListComponent } from './units/states/edit/directives/unit-tutorials-list/unit-tutorials-list.component';
+import { UnitTutorialsManagerComponent } from './units/states/edit/directives/unit-tutorials-manager/unit-tutorials-manager.component';
+import { TutorialService } from './api/models/tutorial/tutorial.service';
+import { TutorialStreamService } from './api/models/tutorial-stream/tutorial-stream.service';
+import { UnitStudentsEditorComponent } from './units/states/edit/directives/unit-students-editor/unit-students-editor.component';
+import { CampusService } from './api/models/campus/campus.service';
+import { WebcalService } from './api/models/webcal/webcal.service';
+import { StudentTutorialSelectComponent } from './units/states/edit/directives/unit-students-editor/student-tutorial-select/student-tutorial-select.component';
+import { StudentCampusSelectComponent } from './units/states/edit/directives/unit-students-editor/student-campus-select/student-campus-select.component';
+import { EmojiService } from './common/services/emoji.service';
+import { TaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/task-list-item/task-list-item.component';
+import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/create-portfolio-task-list-item/create-portfolio-task-list-item.component';
+import { TaskDescriptionCardComponent } from './projects/states/dashboard/directives/task-dashboard/directives/task-description-card/task-description-card.component';
+import { TaskCommentsViewerComponent } from './tasks/task-comments-viewer/task-comments-viewer.component';
+import { UserIconComponent } from './common/user-icon/user-icon.component';
+import { PdfViewerComponent } from './common/pdf-viewer/pdf-viewer.component';
+import { PdfViewerPanelComponent } from './common/pdf-viewer-panel/pdf-viewer-panel.component';
+import { StaffTaskListComponent } from './units/states/tasks/inbox/directives/staff-task-list/staff-task-list.component';
+import { StatusIconComponent } from './common/status-icon/status-icon.component';
+import { TaskPlagiarismCardComponent } from './projects/states/dashboard/directives/task-dashboard/directives/task-plagiarism-card/task-plagiarism-card.component';
+import { TaskCommentService } from './api/models/doubtfire-model';
+import { FileDownloaderService } from './common/file-downloader/file-downloader';
+import { CheckForUpdateService } from './sessions/service-worker-updater/check-for-update.service';
+import { TaskAssessorComponent } from './tasks/task-definition-editor/task-assessor/task-assessor.component';
+import { TaskSubmissionService } from './common/services/task-submission.service';
+import { TaskAssessmentModalService } from './common/modals/task-assessment-modal/task-assessment-modal.service';
+import { TaskSubmissionHistoryComponent } from './tasks/task-submission-history/task-submission-history.component';
+import { HeaderComponent } from './common/header/header.component';
+import { GlobalStateService } from './projects/states/index/global-state.service';
+import { UnauthorisedComponent } from './errors/states/unauthorised/unauthorised.component';
+>>>>>>> 22611c63 (migrate:unlink old components)
 
 export const DoubtfireAngularJSModule = angular
   .module('doubtfire', [
@@ -532,6 +576,8 @@ DoubtfireAngularJSModule.directive(
   'fPortfolioGradeSelectStep',
   downgradeComponent({component: PortfolioGradeSelectStepComponent}),
 );
+
+DoubtfireAngularJSModule.directive('unauthorised', downgradeComponent({ component: UnauthorisedComponent }));
 
 // Global configuration
 
